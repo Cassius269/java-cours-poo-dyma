@@ -19,5 +19,9 @@ public class Main {
         IO.println(fraise.present());
         IO.println(orange.present());
         IO.println(fraise.isFruit() ? fraise.getName() + " est un fruit" : fraise.getName() + " est un légume");
+
+        // Comparaison des fruits et légumes
+        IO.println(fraise.equals(orange) ? "les deux objets sont équivalents" : "Les deux objets ne sont pas identitiques");
+
     }
 }

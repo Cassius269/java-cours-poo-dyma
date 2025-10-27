@@ -1,4 +1,5 @@
 package com.fahami.cda.entity;
+import java.util.Objects;
 
 public abstract class Vegetable {
     // Les propriétés
@@ -74,4 +75,10 @@ public abstract class Vegetable {
     }
 
     public abstract String present();
+
+    @Override
+    public abstract boolean equals(Object obj);
+
+
+    
 }
