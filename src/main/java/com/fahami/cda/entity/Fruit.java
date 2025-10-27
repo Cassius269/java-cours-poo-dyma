@@ -1,6 +1,6 @@
 package com.fahami.cda.entity;
 
-public class Fruit extends Vegetable {
+public final class Fruit extends Vegetable {
 
     public Fruit(String name, String origin, String color) {
         super(name, origin, color);
@@ -14,7 +14,7 @@ public class Fruit extends Vegetable {
      * Méthode pour présenter le fruit
      * @return Une châine de caractères de présentation
      */
-    @Override
+    @Override // surcharcher la classe abstraite
     public String present(){
         String present = "";
         if(isFrench()){

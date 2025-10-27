@@ -18,6 +18,6 @@ public class Main {
         
         IO.println(fraise.present());
         IO.println(orange.present());
-        IO.println(fraise.isFruit());
+        IO.println(fraise.isFruit() ? fraise.getName() + " est un fruit" : fraise.getName() + " est un légume");
     }
 }
