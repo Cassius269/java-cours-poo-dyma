@@ -1,8 +1,28 @@
 package com.fahami.cda.entity;
 
-public class Fruit {
-    // Les propriétés
-    private String name; 
-    // Le constructeur
-    // Les getters et setters
+public class Fruit extends Vegetable {
+
+    public Fruit(String name, String origin, String color) {
+        super(name, origin, color);
+    }
+
+    public Fruit(){
+
+    }
+
+    /**
+     * Méthode pour présenter le fruit
+     * @return Une châine de caractères de présentation
+     */
+    @Override
+    public String present(){
+        String present = "";
+        if(isFrench()){
+           present = this.getName() + " est un fruit d'origine française";
+        }else {
+           present = this.getName() + " est un fruit ne provenant pas de la France";
+        }
+
+        return present;
+    }
 }
