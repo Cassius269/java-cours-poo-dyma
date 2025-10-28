@@ -1,6 +1,6 @@
 package com.fahami.cda.entity;
 
-public final class Fruit extends Vegetable {
+public final class Fruit extends Vegetable  implements iVegetable {
 
     public Fruit(String name, String origin, String color) {
         super(name, origin, color);
@@ -26,22 +26,5 @@ public final class Fruit extends Vegetable {
         return present;
     }
 
-        /**
-     * Méthode pour déterminer si deux objets ont les mêmes valeurs
-     * @return True si tous les attributs du végétal ont les mêmes valeurs que l'objet de comparaison
-     */
-    @Override
-    public boolean equals(Object obj) {
-        if(this == obj) return true;
-        if(obj == null) return false;
-        if(this.getClass() != obj.getClass()) return false;
-
-        Fruit fruit = (Fruit) obj;
-
-        if(!fruit.getName().equals(this.getName())) return false;
-        if(!fruit.getOrigin().equals(this.getOrigin())) return false;
-        if(!fruit.getColor().equals(this.getColor())) return false;
-
-        return true;
-    }
+    
 }

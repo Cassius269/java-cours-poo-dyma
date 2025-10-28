@@ -8,7 +8,7 @@ public abstract class Vegetable {
     private String color;
 
     // Les constructeurs
-    public Vegetable(){};
+    public Vegetable(){}
 
     public Vegetable(String name, String origin, String color) {
         this.name = name;
@@ -74,11 +74,31 @@ public abstract class Vegetable {
         return result;
     }
 
-    public abstract String present();
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Vegetable vegetable = (Vegetable) o;
+        return Objects.equals(name, vegetable.name) && Objects.equals(origin, vegetable.origin) && Objects.equals(color, vegetable.color);
+    }
 
     @Override
-    public abstract boolean equals(Object obj);
+    public int hashCode() {
+        int result = Objects.hashCode(name);
+        result = 31 * result + Objects.hashCode(origin);
+        result = 31 * result + Objects.hashCode(color);
+        return result;
+    }
 
+    // Afficher les objets
 
-    
+    @Override
+    public String toString() {
+        return "Vegetable{" +
+                "name='" + name + '\'' +
+                ", origin='" + origin + '\'' +
+                ", color='" + color + '\'' +
+                '}';
+    }
+
 }
