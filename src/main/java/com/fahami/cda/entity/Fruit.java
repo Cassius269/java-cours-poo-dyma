@@ -1,8 +1,11 @@
 package com.fahami.cda.entity;
 
+import com.fahami.cda.entity.dto.iVegetable;
+import com.fahami.cda.entity.enumeration.Origin;
+
 public final class Fruit extends Vegetable  implements iVegetable {
 
-    public Fruit(String name, String origin, String color) {
+    public Fruit(String name, Origin origin, String color) {
         super(name, origin, color);
     }
 

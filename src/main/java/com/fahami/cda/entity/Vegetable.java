@@ -1,16 +1,18 @@
 package com.fahami.cda.entity;
 import java.util.Objects;
 
+import com.fahami.cda.entity.enumeration.Origin;
+
 public abstract class Vegetable {
     // Les propriétés
     private String name; 
-    private String origin; // pays d'origine
+    private Origin origin; // pays d'origine est de type énum
     private String color;
 
     // Les constructeurs
     public Vegetable(){}
 
-    public Vegetable(String name, String origin, String color) {
+    public Vegetable(String name, Origin origin, String color) {
         this.name = name;
         this.origin = origin;
         this.color = color;
@@ -27,11 +29,11 @@ public abstract class Vegetable {
         return this;
     }
 
-    public String getOrigin(){
+    public Origin getOrigin(){
         return this.origin;
     }
 
-    public Vegetable setOrigin(String origin){
+    public Vegetable setOrigin(Origin origin){
         this.origin = origin;
         return this;
     }
@@ -53,7 +55,7 @@ public abstract class Vegetable {
     public boolean isFrench(){
         boolean result = true;
 
-        if(!origin.equals("France")){
+        if(!origin.equals(Origin.France)){
             result = !result;
         }
         return result;
