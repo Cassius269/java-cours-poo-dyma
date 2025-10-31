@@ -1,5 +1,8 @@
 package com.fahami.cda;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import com.fahami.cda.entity.Fruit;
 import com.fahami.cda.entity.dto.FruitDto;
 import com.fahami.cda.entity.enumeration.Origin;
@@ -10,7 +13,7 @@ public class Main {
         // System.out.println("Hello world!");
 
         // Création d'une instance de fruit à l'aide du constructeur plein
-        Fruit fraise = new Fruit("orange", Origin.Maurice, "orange");
+        Fruit fraise = new Fruit("fraise", Origin.Maurice, "orange");
 
         // Création d'une instance d'orange avec le constructeur vide
         Fruit orange = new Fruit();
@@ -47,5 +50,23 @@ public class Main {
         banana.setName("banane");
         banana.setOrigin(Origin.France);
 
+
+        // Utilisation des sets
+        // Création d'un ensemble non ordonné de fruits
+        Set<Fruit> fruitSet  = new HashSet<>();
+        fruitSet.add(fraise);
+        fruitSet.add(banana);
+        fruitSet.add(fraise); // fraise est un doublon et ne sera pas ajouté dans le jeu de données
+        fruitSet.add(orange);
+
+        IO.println(fruitSet);
+        for (Fruit fruit : fruitSet) {
+            IO.println(fruit.getName());
+        }
+
+        // Vérifier si l'objet banane est présent dans l'ensemble
+        if(fruitSet.contains(banana)){
+            IO.println("L'objet banane est présent dans le set");
+        }
     }
 }
