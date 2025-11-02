@@ -68,5 +68,10 @@ public class Main {
         if(fruitSet.contains(banana)){
             IO.println("L'objet banane est présent dans le set");
         }
+
+        // Apprendre les packages
+        var main = new com.fahami.cda.entity.Main(); // attribuer le par inférence
+
+        IO.println(main);
     }
 }
